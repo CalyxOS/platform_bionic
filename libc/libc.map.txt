@@ -8,6 +8,7 @@ LIBC {
     __atomic_swap; # arm
     __b64_ntop;
     __b64_pton;
+    __bind; # arm x86 introduced=33
     __cmsg_nxthdr; # introduced=21
     __connect; # arm x86 introduced=21
     __ctype_get_mb_cur_max; # introduced=21

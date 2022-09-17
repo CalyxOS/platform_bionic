@@ -32,6 +32,7 @@ extern "C" __socketcall int __sendmmsg(int, const mmsghdr*, unsigned int, int);
 extern "C" __socketcall ssize_t __sendmsg(int, const msghdr*, unsigned int);
 extern "C" __socketcall int __sendto(int, const void*, size_t, int, const sockaddr*, socklen_t);
 extern "C" __socketcall int __socket(int, int, int);
+extern "C" __socketcall int __bind(int, const sockaddr*, socklen_t);
 
 static unsigned fallBackNetIdForResolv(unsigned netId) {
     return netId;
@@ -50,6 +51,7 @@ __LIBC_HIDDEN__ NetdClientDispatch __netdClientDispatch __attribute__((aligned(3
     __sendmsg,
     __sendto,
     __socket,
+    __bind,
     fallBackNetIdForResolv,
     fallBackDnsOpenProxy,
 };
@@ -77,4 +79,8 @@ ssize_t sendto(int fd, const void* buf, size_t n, int flags,
 
 int socket(int domain, int type, int protocol) {
   return FDTRACK_CREATE(__netdClientDispatch.socket(domain, type, protocol));
+}
+
+int bind(int fd, const sockaddr* addr, socklen_t addr_length) {
+    return __netdClientDispatch.bind(fd, addr, addr_length);
 }
