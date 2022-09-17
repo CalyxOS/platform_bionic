@@ -28,6 +28,10 @@ struct NetdClientDispatch {
     ssize_t (*sendmsg)(int, const struct msghdr*, unsigned int);
     int (*sendto)(int, const void*, size_t, int, const struct sockaddr*, socklen_t);
     int (*socket)(int, int, int);
+    int (*bind)(int, const struct sockaddr*, socklen_t);
+    int (*getsockname)(int, struct sockaddr*, socklen_t*);
+    int (*getpeername)(int, struct sockaddr*, socklen_t*);
+    ssize_t (*recvfrom)(int, void*, size_t, int, struct sockaddr*, socklen_t*);
     unsigned (*netIdForResolv)(unsigned);
     int (*dnsOpenProxy)();
 };

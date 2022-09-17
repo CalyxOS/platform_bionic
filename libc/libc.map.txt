@@ -8,6 +8,7 @@ LIBC {
     __atomic_swap; # arm
     __b64_ntop;
     __b64_pton;
+    __bind; # arm x86 introduced=33
     __cmsg_nxthdr; # introduced=21
     __connect; # arm x86 introduced=21
     __ctype_get_mb_cur_max; # introduced=21
@@ -45,6 +46,8 @@ LIBC {
     __getcwd; # arm x86
     __getpid; # arm x86 introduced=21
     __getpriority; # arm x86
+    __getpeername; # arm x86 introduced=33
+    __getsockname; # arm x86 introduced=33
     __gnu_basename; # introduced=23
     __gnu_strerror_r; # introduced=23
     __hostalias;
@@ -129,6 +132,7 @@ LIBC {
     __readlink_chk; # introduced=23
     __readlinkat_chk; # introduced=23
     __reboot; # arm x86
+    __recvfrom; # arm x86 introduced=33
     __recvfrom_chk; # introduced=21
     __register_atfork; # introduced=23
     __res_close;

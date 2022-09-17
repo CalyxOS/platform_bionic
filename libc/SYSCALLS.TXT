@@ -246,14 +246,14 @@ int     __signalfd4:signalfd4(int, const sigset64_t*, size_t, int)  all
 # sockets
 int           __socket:socket(int, int, int)              arm,lp64
 int           __socketpair:socketpair(int, int, int, int*)    arm,lp64
-int           bind(int, struct sockaddr*, socklen_t)  arm,lp64
+int           __bind:bind(int, struct sockaddr*, socklen_t)  arm,lp64
 int           __connect:connect(int, struct sockaddr*, socklen_t)   arm,lp64
 int           listen(int, int)                   arm,lp64
 int           __accept4:accept4(int, struct sockaddr*, socklen_t*, int)  arm,lp64
-int           getsockname(int, struct sockaddr*, socklen_t*)  arm,lp64
-int           getpeername(int, struct sockaddr*, socklen_t*)  arm,lp64
+int           __getsockname:getsockname(int, struct sockaddr*, socklen_t*)  arm,lp64
+int           __getpeername:getpeername(int, struct sockaddr*, socklen_t*)  arm,lp64
 ssize_t       __sendto:sendto(int, const void*, size_t, int, const struct sockaddr*, socklen_t)  arm,lp64
-ssize_t       recvfrom(int, void*, size_t, unsigned int, struct sockaddr*, socklen_t*)  arm,lp64
+ssize_t       __recvfrom:recvfrom(int, void*, size_t, unsigned int, struct sockaddr*, socklen_t*)  arm,lp64
 int           shutdown(int, int)  arm,lp64
 int           setsockopt(int, int, int, const void*, socklen_t)  arm,lp64
 int           getsockopt(int, int, int, void*, socklen_t*)    arm,lp64
@@ -264,14 +264,14 @@ int           __sendmmsg:sendmmsg(int, struct mmsghdr*, unsigned int, int)   arm
 
 # sockets for x86. These are done as an "indexed" call to socketcall syscall.
 int           __socket:socketcall:1(int, int, int) x86
-int           bind:socketcall:2(int, struct sockaddr*, int)  x86
+int           __bind:socketcall:2(int, struct sockaddr*, int)  x86
 int           __connect:socketcall:3(int, struct sockaddr*, socklen_t)   x86
 int           listen:socketcall:4(int, int)                   x86
-int           getsockname:socketcall:6(int, struct sockaddr*, socklen_t*)  x86
-int           getpeername:socketcall:7(int, struct sockaddr*, socklen_t*)  x86
+int           __getsockname:socketcall:6(int, struct sockaddr*, socklen_t*)  x86
+int           __getpeername:socketcall:7(int, struct sockaddr*, socklen_t*)  x86
 int           __socketpair:socketcall:8(int, int, int, int*)    x86
 ssize_t       __sendto:socketcall:11(int, const void*, size_t, int, const struct sockaddr*, socklen_t)  x86
-ssize_t       recvfrom:socketcall:12(int, void*, size_t, unsigned int, struct sockaddr*, socklen_t*)  x86
+ssize_t       __recvfrom:socketcall:12(int, void*, size_t, unsigned int, struct sockaddr*, socklen_t*)  x86
 int           shutdown:socketcall:13(int, int)  x86
 int           setsockopt:socketcall:14(int, int, int, const void*, socklen_t)  x86
 int           getsockopt:socketcall:15(int, int, int, void*, socklen_t*)    x86
