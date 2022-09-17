@@ -58,6 +58,7 @@ static void netdClientInitImpl() {
     netdClientInitFunction(handle, "netdClientInitSendmsg", &__netdClientDispatch.sendmsg);
     netdClientInitFunction(handle, "netdClientInitSendto", &__netdClientDispatch.sendto);
     netdClientInitFunction(handle, "netdClientInitSocket", &__netdClientDispatch.socket);
+    netdClientInitFunction(handle, "netdClientInitBind", &__netdClientDispatch.bind);
 
     netdClientInitFunction(handle, "netdClientInitNetIdForResolv",
                            &__netdClientDispatch.netIdForResolv);
