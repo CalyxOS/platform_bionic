@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a397399_f0631dab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-29T22:13:53Z",
+      "side": 1,
+      "message": "We usually don\u0027t include any patches not needed for one of the supported devices.",
+      "revId": "d601fc78405aaa8b5bc8db9ca349c1b1500d2b79",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
