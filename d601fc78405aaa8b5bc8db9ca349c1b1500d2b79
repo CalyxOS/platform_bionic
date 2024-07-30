@@ -33,6 +33,24 @@
       "message": "Maybe this would be worth sending to AOSP?",
       "revId": "d601fc78405aaa8b5bc8db9ca349c1b1500d2b79",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13638882_728cdc76",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-07-30T16:48:15Z",
+      "side": 1,
+      "message": "It\u0027s not in AOSP because vendors are not supposed to use it, the original commit is 6 years old and only needed for compatibility with outdated vendor blobs.",
+      "parentUuid": "ee81d3b4_146a6f0a",
+      "revId": "d601fc78405aaa8b5bc8db9ca349c1b1500d2b79",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
